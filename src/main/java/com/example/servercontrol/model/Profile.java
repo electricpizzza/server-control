@@ -1,7 +1,6 @@
 package com.example.servercontrol.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import javafx.geometry.Pos;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -28,6 +27,7 @@ public class Profile {
     private User user;
 
     @OneToMany(mappedBy = "profile")
+    @JsonIgnore
     List<Post> posts;
 
     @ManyToMany
